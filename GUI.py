@@ -18,6 +18,7 @@ def ku(kutsu):
 
 def kyllä():
     print("Kyllä")
+    
 def ky(kyllä):
     print("Kyllä")
 
@@ -43,6 +44,8 @@ label.configure(font="bold")
 lopeta = Button(pohja, text = "QUIT", command=lopeta)
 lopeta.pack(side = BOTTOM)
 lopeta.configure(background='grey')
+lopeta.config(height=1,width=6)
+lopeta.config(font="bold")
 
 
 kutsuteksti = Label(pohja, text="Paina 1 lähettääksesi")
@@ -97,4 +100,6 @@ ei.configure(background='red')
 ei.configure(font="bold")
 
 
+
 pohja.mainloop()
+
