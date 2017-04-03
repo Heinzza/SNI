@@ -1,7 +1,6 @@
-#!/usr/bin/python 3
+#!/usr/bin/env python3
 import sys
 from tkinter import *
-# Muutos
 
 def lopeta():
     pohja.destroy()
