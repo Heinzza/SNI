@@ -1,4 +1,4 @@
-import tkinter
+import sys
 from tkinter import *
 
 def lopeta():
@@ -96,6 +96,4 @@ ei.configure(background='red')
 ei.configure(font="bold")
 
 
-
 pohja.mainloop()
-
