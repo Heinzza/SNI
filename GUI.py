@@ -29,9 +29,16 @@ def e(ei):
     print("En")
 
 
+
 pohja = Tk()
 pohja.title("Senior Notification Interface")
 pohja.configure(background='grey')
+
+sni = Label(pohja, text="Senior Notification Interface", font=("Arial",20))
+sni.pack
+sni.config(background="grey")
+sni.place(relx=0.5, rely=0.04, anchor=CENTER)
+sni.config(height=2,width=30)
 
 pvm = Label(pohja,text="Päivämäärä tähän", font=("Arial",11))
 pvm.pack()
@@ -44,11 +51,11 @@ huone.place(relx=0.055, rely=0.07, anchor=S)
 huone.config(background="grey")
 
 
-label = Label(pohja,text="HEI. ONKO KAIKKI HYVIN?",font=("Arial",30))
+label = Label(pohja,text="HEI. ONKO KAIKKI HYVIN?",font=("Arial",24))
 label.pack()
 label.config(background = "grey")
-label.place(relx=0.5, rely=0.15, anchor=CENTER)
-label.config(height=10,width=30) 
+label.place(relx=0.5, rely=0.25, anchor=CENTER)
+label.config(height=2,width=30) 
 
 
 lopeta = Button(pohja, text = "QUIT", command=lopeta)
