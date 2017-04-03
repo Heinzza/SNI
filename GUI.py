@@ -44,7 +44,7 @@ huone.place(relx=0.055, rely=0.07, anchor=S)
 huone.config(background="grey")
 
 
-label = Label(pohja,text="HEI. ONKO KAIKKI HYVIN?",font=("Arial",28))
+label = Label(pohja,text="HEI. ONKO KAIKKI HYVIN?",font=("Arial",30))
 label.pack()
 label.config(background = "grey")
 label.place(relx=0.5, rely=0.15, anchor=CENTER)
