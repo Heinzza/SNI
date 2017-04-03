@@ -1,5 +1,5 @@
 import sys
-from tkinter import *
+import tkinter
 
 def lopeta():
     pohja.destroy()
