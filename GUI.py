@@ -32,6 +32,13 @@ pohja = Tk()
 pohja.title("Senior Notification Interface")
 pohja.configure(background='grey')
 
+
+sni = Label(pohja, text="Senior Notification Interface", font=("Arial",20))
+sni.pack
+sni.config(background="grey")
+sni.place(relx=0.5, rely=0.04, anchor=CENTER)
+sni.config(height=2,width=30)
+
 #lisätään pävämäärä ja huonenumero
 pvm = Label(pohja,text="Päivämäärä tähän", font=("Arial",11))
 pvm.pack()
