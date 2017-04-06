@@ -48,7 +48,7 @@ label = Label(pohja,text="HEI. ONKO KAIKKI HYVIN?",font=("Arial",30))
 label.pack()
 label.config(background = "grey")
 label.place(relx=0.5, rely=0.15, anchor=CENTER)
-label.config(height=10,width=30) 
+label.config(height=2,width=30) 
 
 #Lopetus-nappi
 lopeta = Button(pohja, text = "Sammuta", command=lopeta)
