@@ -51,7 +51,7 @@ label.place(relx=0.5, rely=0.15, anchor=CENTER)
 label.config(height=10,width=30) 
 
 #Lopetus-nappi
-lopeta = Button(pohja, text = "QUIT", command=lopeta)
+lopeta = Button(pohja, text = "Sammuta", command=lopeta)
 lopeta.pack(side = BOTTOM)
 lopeta.configure(background='grey')
 lopeta.config(height=1,width=6)
