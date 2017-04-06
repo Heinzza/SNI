@@ -8,23 +8,23 @@ def lopeta():
 
 def hätä():
     print("Hätä. Apu on tulossa!")
-def hä(hätä):
+def hätäKbd(hätä):
     print("Hätä. Apu on tulossa!")
         
 def kutsu():
     print("Tulemme käymään mahdollisimman pian.")
-def ku(kutsu):
+def kutsuKdb(kutsu):
     print("Tulemme käymään mahdollisimman pian.")
 
 def kyllä():
     print("Kyllä")
     
-def ky(kyllä):
+def kylläKbd(kyllä):
     print("Kyllä")
 
 def ei():
     print("En")
-def e(ei):
+def eiKbd(ei):
     print("En")
 
 
@@ -64,7 +64,7 @@ kutsuteksti.config(background = "grey")
 kutsuteksti.place(relx=0.2, rely=0.4, anchor=CENTER)
 kutsu = Button(pohja, text = "KUTSU", font=("Arial",20), command=kutsu)
 kutsu.place(relx=0.2, rely=0.5, anchor=CENTER)
-pohja.bind("1", ku)
+pohja.bind("1", kutsuKdb)
 kutsu.config( height = 3, width = 9)
 kutsu.configure(background='green')
 
@@ -77,7 +77,7 @@ hätäteksti.config(background = "grey")
 hätäteksti.place(relx=0.4, rely=0.4, anchor=CENTER)
 hätä = Button(pohja, text = "HÄTÄ", font=("Arial",20), command=hätä)
 hätä.place(relx=0.4, rely=0.5, anchor=CENTER)
-pohja.bind("2", hä)
+pohja.bind("2", hätäKbd)
 hätä.config( height = 3, width = 9)
 hätä.configure(background='red')
 
@@ -90,7 +90,7 @@ kylläteksti.config(background = "grey")
 kylläteksti.place(relx=0.6, rely=0.4, anchor=CENTER)
 kyllä = Button(pohja, text = "KYLLÄ",font=("Arial",20),command=kyllä)
 kyllä.place(relx=0.6, rely=0.5, anchor=CENTER)
-pohja.bind("3", ky)
+pohja.bind("3", kylläKbd)
 kyllä.config( height = 3, width = 9)
 kyllä.configure(background='green')
 
@@ -103,7 +103,7 @@ eiteksti.config(background = "grey")
 eiteksti.place(relx=0.8, rely=0.4, anchor=CENTER)
 ei = Button(pohja, text = "EI",font=("Arial",20), command=ei)
 ei.place(relx=0.8, rely=0.5, anchor=CENTER)
-pohja.bind("4", e)
+pohja.bind("4", eiKbd)
 ei.config( height = 3, width = 9)
 ei.configure(background='red')
 
