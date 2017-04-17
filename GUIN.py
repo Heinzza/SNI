@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import sys
 from tkinter import *
-from tkinter import messagebox as tkMessageBox
 
 def lopeta():
     pohja.destroy()
