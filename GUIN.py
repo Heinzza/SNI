@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
+import datetime
 from tkinter import *
-from tkinter import messagebox as tkMessageBox
 
 def lopeta():
     pohja.destroy()
@@ -66,7 +66,8 @@ sni.place(relx=0.5, rely=0.04, anchor=CENTER)
 sni.config(height=2,width=30)
 
 #lisätään pävämäärä ja huonenumero
-pvm = Label(pohja,text="Päivämäärä tähän", font=("Arial",11))
+nyt = str(datetime.date.today())
+pvm = Label(pohja,text="Päivämäärä: %s" % (nyt), font=("Arial",11))
 pvm.pack()
 pvm.place(relx=0.05, rely=0.04, anchor=S)
 pvm.config(bg="grey")
