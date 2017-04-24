@@ -62,7 +62,19 @@ def eiKbd(ei):
     ei.geometry("300x200+540+300")
     viesti = open("viesti.txt","w")
     viesti.write("Vastaus: En")
-    viesti.close() 
+    viesti.close()
+
+def bind():
+    print("Viestit")
+def msg(bind):
+    teksti = Toplevel()
+    file = open("sni.txt","r")
+    content = file.readline()
+    teksti.title("Viestit")
+    Message(teksti, text=content, font=("Arial",20), padx=60, pady=60).pack()
+    teksti.after(4000, teksti.destroy)
+    teksti.geometry("300x200+540+300")
+    file.close()
     
     
 #Luodaan tyhjä ikkuna
@@ -99,13 +111,12 @@ label.config(height=2,width=30)
 
 #Viesti
 
-file = open("sni.txt","r")
-content = file.readline() 
-teksti = Label(pohja, text=content,font=("Arial",20))
-teksti.pack
-teksti.place(relx=0.5, rely=0.7,anchor=CENTER)
-teksti.config(height=2,width=30)
-teksti.config(bg="white")
+te = Button(pohja, text = "VIESTIT", font=("Arial",14), command=msg) 
+te.place(relx=0.5, rely=0.7, anchor=CENTER)
+te.config(bg="white")
+te.config(height=2,width=8)
+pohja.bind("5", msg) 
+
 
 
 #Lopetus-nappi
