@@ -64,9 +64,9 @@ def eiKbd(ei):
     viesti.write("Vastaus: En")
     viesti.close()
 
-def bind():
+def viestit():
     print("Viestit")
-def msg(bind):
+def viestitKbd(viestit):
     teksti = Toplevel()
     file = open("sni.txt","r")
     content = file.readline()
@@ -111,11 +111,11 @@ label.config(height=2,width=30)
 
 #Viesti
 
-te = Button(pohja, text = "VIESTIT", font=("Arial",14), command=msg) 
+te = Button(pohja, text = "VIESTIT", font=("Arial",14), command=viestitKbd) 
 te.place(relx=0.5, rely=0.7, anchor=CENTER)
 te.config(bg="white")
 te.config(height=2,width=8)
-pohja.bind("5", msg) 
+pohja.bind("5", viestitKbd) 
 
 
 
