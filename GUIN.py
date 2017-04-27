@@ -7,6 +7,15 @@ def lopeta():
     pohja.destroy()
     sys.exit(0) #lopeta, ei virheitä
 
+def logViesti(viesti):
+    """Koitetaan kirjoittaa viesti tiedostoon"""
+    f = open("viesti.txt", "w") #TODO should we append to file?
+    try:
+        f.write(viesti)
+    finally:
+        f.close()
+
+
 def hätä():
     print("Hätä. Apu on tulossa!")
 def hätäKbd(hätä):
@@ -16,12 +25,8 @@ def hätäKbd(hätä):
     Message(hätä, text="Hätäkutsu on lähetetty, tulemme mahdollisimman pian", font=("Arial",20), padx=50, pady=50).pack()
     hätä.after(4000, hätä.destroy)
     hätä.geometry("300x200+540+300")
-    viesti = open("viesti.txt","w")
-    viesti.write("Hätäkutsu saapunut!")
-    viesti.close() 
-
+    logViesti("Hätäkutsu saapunut!")
     
-
 
 def kutsu():
     print("Tulemme käymään mahdollisimman pian.")
@@ -32,9 +37,7 @@ def kutsuKdb(kutsu):
     Message(kutsu, text="Kutsu on lähetetty, tulemme mahdollisimman pian", font=("Arial",20), padx=50, pady=50).pack()
     kutsu.after(4000, kutsu.destroy)
     kutsu.geometry("300x200+540+300")
-    viesti = open("viesti.txt","w")
-    viesti.write("Kutsupyyntö saapunut!")
-    viesti.close() 
+    logViesti("Kutsupyyntö saapunut!")	
 
 
 def kyllä():
@@ -46,9 +49,7 @@ def kylläKbd(kyllä):
     Message(kyllä, text="Vastasit kyllä", font=("Arial",20), padx=60, pady=60).pack()
     kyllä.after(4000, kyllä.destroy)
     kyllä.geometry("300x200+540+300")
-    viesti = open("viesti.txt","w")
-    viesti.write("Vastaus: Kyllä")
-    viesti.close() 
+    logViesti("Vastaus: Kyllä")	
     
 
 def ei():
@@ -60,21 +61,22 @@ def eiKbd(ei):
     Message(ei, text="Vastasit ei", font=("Arial",20), padx=60, pady=60).pack()
     ei.after(4000, ei.destroy)
     ei.geometry("300x200+540+300")
-    viesti = open("viesti.txt","w")
-    viesti.write("Vastaus: En")
-    viesti.close()
+    logViesti("Vastaus: En")	
+
 
 def viestit():
     print("Viestit")
 def viestitKbd(viestit):
     teksti = Toplevel()
-    file = open("sni.txt","r")
-    content = file.readline()
     teksti.title("Viestit")
+    file = open("sni.txt","r")
+    try:
+        content = file.readline()
+    finally:
+        file.close()
     Message(teksti, text=content, font=("Arial",20), padx=60, pady=60).pack()
     teksti.after(4000, teksti.destroy)
     teksti.geometry("300x200+540+300")
-    file.close()
     
     
 #Luodaan tyhjä ikkuna
