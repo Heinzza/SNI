@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import time
 import sys
 import datetime
 from tkinter import *
@@ -7,11 +8,17 @@ def lopeta():
     pohja.destroy()
     sys.exit(0) #lopeta, ei virheitä
 
+time = time.strftime("%X %x")
+
 def logViesti(viesti):
     """Koitetaan kirjoittaa viesti tiedostoon"""
-    f = open("viesti.txt", "w") #TODO should we append to file?
+    #Append the message to the file. Date and time included.
+    f = open("viesti.txt", "a") 
     try:
         f.write(viesti)
+        f.write(" ") 
+        f.write(time)
+        f.write("\n\n")
     finally:
         f.close()
 
@@ -26,6 +33,7 @@ def hätäKbd(hätä):
     hätä.after(4000, hätä.destroy)
     hätä.geometry("300x200+540+300")
     logViesti("Hätäkutsu saapunut!")
+    
     
 
 def kutsu():
@@ -71,12 +79,12 @@ def viestitKbd(viestit):
     teksti.title("Viestit")
     file = open("sni.txt","r")
     try:
-        content = file.readline()
+        content = file.read()
     finally:
         file.close()
-    Message(teksti, text=content, font=("Arial",20), padx=60, pady=60).pack()
-    teksti.after(4000, teksti.destroy)
-    teksti.geometry("300x200+540+300")
+    Message(teksti, text=content, font=("Arial",20), padx=1000, pady=1000).pack()
+    teksti.after(5000, teksti.destroy)
+    teksti.geometry("500x300+430+250")
     
     
 #Luodaan tyhjä ikkuna
@@ -93,6 +101,9 @@ sni.place(relx=0.5, rely=0.04, anchor=CENTER)
 sni.config(height=2,width=30)
 
 #lisätään pävämäärä ja huonenumero
+#nyt = datetime.datetime.now()
+#nyt = nyt.strftime("%d-%m-%Y %H:%M")
+
 nyt = str(datetime.date.today())
 pvm = Label(pohja,text="Päivämäärä: %s" % (nyt), font=("Arial",11))
 pvm.pack()
