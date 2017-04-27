@@ -7,6 +7,15 @@ def lopeta():
     pohja.destroy()
     sys.exit(0) #lopeta, ei virheitä
 
+def logViesti(viesti):
+    """Koitetaan kirjoittaa viesti tiedostoon"""
+    f = open("viesti.txt", "w") #TODO should we append to file?
+    try:
+        f.write(viesti)
+    finally:
+        f.close()
+
+
 def hätä():
     print("Hätä. Apu on tulossa!")
 def hätäKbd(hätä):
