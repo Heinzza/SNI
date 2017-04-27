@@ -68,13 +68,15 @@ def viestit():
     print("Viestit")
 def viestitKbd(viestit):
     teksti = Toplevel()
-    file = open("sni.txt","r")
-    content = file.readline()
     teksti.title("Viestit")
+    file = open("sni.txt","r")
+    try:
+        content = file.readline()
+    finally:
+        file.close()
     Message(teksti, text=content, font=("Arial",20), padx=60, pady=60).pack()
     teksti.after(4000, teksti.destroy)
     teksti.geometry("300x200+540+300")
-    file.close()
     
     
 #Luodaan tyhjä ikkuna
