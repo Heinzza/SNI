@@ -101,9 +101,6 @@ sni.place(relx=0.5, rely=0.04, anchor=CENTER)
 sni.config(height=2,width=30)
 
 #lisätään pävämäärä ja huonenumero
-#nyt = datetime.datetime.now()
-#nyt = nyt.strftime("%d-%m-%Y %H:%M")
-
 nyt = str(datetime.date.today())
 pvm = Label(pohja,text="Päivämäärä: %s" % (nyt), font=("Arial",11))
 pvm.pack()
@@ -135,7 +132,7 @@ pohja.bind("5", viestitKbd)
 #Lopetus-nappi
 lopeta = Button(pohja, text = "Quit", command=lopeta)
 lopeta.pack(side = BOTTOM)
-lopeta.configure(bg='grey')
+lopeta.configure(bg='white')
 lopeta.config(height=1,width=6)
 lopeta.config(font="bold")
 
